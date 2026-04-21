@@ -1,9 +1,18 @@
  # Protein classification using CNN model
 
- Team members: 
+ Team members:
 
- - Shatu Ahmed (Matr.N. 2134985)
- - Anna Beketova (Matr.N. 2176220)
+- Shatu Ahmed (Matr.N. 2134985)
+- Anna Beketova (Matr.N. 2176220)
+
+## Overview
+
+This project implements a machine learning pipeline for protein classification using a Convolutional Neural Network (CNN).
+
+The workflow includes data preprocessing, feature engineering (sequence embedding using Kidera factors), model training, and evaluation. 
+The model is trained to classify protein sequences into functional groups (Mapman bins).
+
+The project demonstrates experience with deep learning, data processing, and working with structured biological datasets.
 
 ## Technical information
 
@@ -38,27 +47,25 @@ Following Python libraries were used:
 
 ## Project navigation
 
-- [material](https://gitlab.rlp.net/aibi_practical/aibi-ws-2024-25/-/tree/Embedding/material) folder contains all data originating from third parties, such as the mapman table and reference proteins in the table.
-    - [old_dataset](https://gitlab.rlp.net/aibi_practical/aibi-ws-2024-25/-/tree/Embedding/material/old_dataset)
-    - [updated_dataset](https://gitlab.rlp.net/aibi_practical/aibi-ws-2024-25/-/tree/Embedding/material/updated_dataset)
-- [methods](https://gitlab.rlp.net/aibi_practical/aibi-ws-2024-25/-/tree/Embedding/methods) folder contains all scripts used for the project.
-- [results](https://gitlab.rlp.net/aibi_practical/aibi-ws-2024-25/-/tree/Embedding/results) folder contains all results data generated from the analysis of material and intermediate results.
-    - [Experiment_plots](https://gitlab.rlp.net/aibi_practical/aibi-ws-2024-25/-/tree/Embedding/results/Experiment_plots) folder contains all experiment plots used in final reports.
-- [docs](https://gitlab.rlp.net/aibi_practical/aibi-ws-2024-25/-/tree/Embedding/docs) folder contains scientific reports, weekly materials such as weekly reports and weekly lab notebooks. Every week has its respective directory containing the neccessary documentations (Labbooks) and materials: 
-    - [week1](https://gitlab.rlp.net/aibi_practical/aibi-ws-2024-25/-/tree/Embedding/docs/week1)
-    - [week2](https://gitlab.rlp.net/aibi_practical/aibi-ws-2024-25/-/tree/Embedding/docs/week2)
-    - [week3](https://gitlab.rlp.net/aibi_practical/aibi-ws-2024-25/-/tree/Embedding/docs/week3)
-    - [week4](https://gitlab.rlp.net/aibi_practical/aibi-ws-2024-25/-/tree/Embedding/docs/week4?ref_type=heads)
-    - [week5](https://gitlab.rlp.net/aibi_practical/aibi-ws-2024-25/-/tree/Embedding/docs/week5?ref_type=heads)
-    - [week6](https://gitlab.rlp.net/aibi_practical/aibi-ws-2024-25/-/tree/Embedding/docs/week6?ref_type=heads)
-    - [week7](https://gitlab.rlp.net/aibi_practical/aibi-ws-2024-25/-/tree/Embedding/docs/week7)
-    - [short_report](https://gitlab.rlp.net/aibi_practical/aibi-ws-2024-25/-/tree/Embedding/docs/short_report) contains short one-page report about the best experiment.
+- [material](material/) folder contains all data originating from third parties, such as the mapman table and reference proteins in the table.
+- [methods](methods/) folder contains all scripts used for the project.
+- [results](results/) folder contains all results data generated from the analysis of material and intermediate results.
+    - [Experiment_plots](results/Experiment_plots) folder contains all experiment plots used in final reports.
+- [docs](docs/) folder contains scientific reports, weekly materials such as weekly reports and weekly lab notebooks. Every week has its respective directory containing the neccessary documentations (Labbooks) and materials: 
+    - [week1](docs/week1/)
+    - [week2](docs/week2/)
+    - [week3](docs/week3/)
+    - [week4](docs/week4/)
+    - [week5](docs/week5/)
+    - [week6](docs/week6/)
+    - [week7](docs/week7/)
+    - [short_report](docs/short_report/) contains short one-page report about the best experiment.
 
 ## Folder details
 
 ### material
 
-The protein sequences and their assignments to groups (Mapman Bins) of the same molecular function are in the files `Mapman_reference_DB_202310.tar.bz2` and `mapman.tar.bz`. The files were already extracted and placed in two folders: [old_dataset](https://gitlab.rlp.net/aibi_practical/aibi-ws-2024-25/-/tree/Embedding/material/old_dataset) and [updated_dataset](https://gitlab.rlp.net/aibi_practical/aibi-ws-2024-25/-/tree/Embedding/material/updated_dataset).
+The protein sequences and their assignments to groups (Mapman Bins) of the same molecular function are in the files `Mapman_reference_DB_202310.tar.bz2` and `mapman.tar.bz`. The files were already extracted and placed in two folders: [old_dataset](material/old_dataset/) and [updated_dataset](material/updated_dataset/).
 
 Extract data with `tar xjf <filename>` if needed. 
 
@@ -72,13 +79,13 @@ About the Mapman Bin Table:
 
 About the datasets:
 
-Originally used dataset is in [old_dataset](https://gitlab.rlp.net/aibi_practical/aibi-ws-2024-25/-/tree/Embedding/material/old_dataset).
+Originally used dataset is in [old_dataset](material/old_dataset/).
 
 Content:
 - `mapmanreferencebins.results.txt` the mapman table. 
 - `protein.fa` - the reference proteins in the above table
 
-Updated dataset is in the [updated_dataset](https://gitlab.rlp.net/aibi_practical/aibi-ws-2024-25/-/tree/Embedding/material/updated_dataset) folder and has following features:
+Updated dataset is in the [updated_dataset](material/updated_dataset/) folder and has following features:
 
 - Header has the form BINCODE, IDENTIFIER
 - Bins 35.* and 50.* are removed
@@ -105,9 +112,9 @@ Content:
 
 ### results
 
-`properties.188.csv` and `properties.all.csv` are the results from running the `get_aa_properties.sh` script (see [methods](https://gitlab.rlp.net/aibi_practical/aibi-ws-2024-25/-/tree/Embedding/methods) folder). The files weren't generated from the group, since they were already provided (see README.md in [results](https://gitlab.rlp.net/aibi_practical/aibi-ws-2024-25/-/tree/Embedding/results) folder).
+`properties.188.csv` and `properties.all.csv` are the results from running the `get_aa_properties.sh` script (see [methods](methods/) folder). The files weren't generated from the group, since they were already provided (see README.md in [results](results/) folder).
 
-In the files `kidera_encoded_compressed.npz`, `training_output_1500_adam.txt` and `cross_validation_output_1500_adam.txt` sequences with the length of 1500 aminoacids are used as an output example. More plots are in [Experiment_plots](https://gitlab.rlp.net/aibi_practical/aibi-ws-2024-25/-/tree/Embedding/results/Experiment_plots).
+In the files `kidera_encoded_compressed.npz`, `training_output_1500_adam.txt` and `cross_validation_output_1500_adam.txt` sequences with the length of 1500 aminoacids are used as an output example. More plots are in [Experiment_plots](results/Experiment_plots/).
 
 
 ## Reproducibility steps
@@ -120,7 +127,7 @@ Results of the models with same parameters could differ slightly after each exec
 
 ### 1. Dataset preparation
 
-The `mapman.tsv` file needs to be filtered, in order to keep only the one largest bin per root bin (see `README.md` in [material/updated_dataset](https://gitlab.rlp.net/aibi_practical/aibi-ws-2024-25/-/tree/Embedding/material/updated_dataset) folder)
+The `mapman.tsv` file needs to be filtered, in order to keep only the one largest bin per root bin (see `README.md` in [material/updated_dataset](material/updated_dataset/) folder)
 
 Run following bash commands:
 
@@ -130,23 +137,23 @@ and
 
 `python3 material/updated_dataset/filter_prots.py results/mapman_filtered.tsv material/updated_dataset/protein.fa > results/protein_filtered.fa`
 
-This will create two files in [results](https://gitlab.rlp.net/aibi_practical/aibi-ws-2024-25/-/tree/Embedding/results) folder:
+This will create two files in [results](results/) folder:
 
 - `mapman_filtered.tsv` - will be used for labeling and embedding
 - `protein_filtered.fa` - will be used for extracting the actual protein sequences for training
 
 ### 2. Data preprocessing
 
-Run the script `data_preprocessing.py`, that is located in [methods](https://gitlab.rlp.net/aibi_practical/aibi-ws-2024-25/-/tree/Embedding/methods) folder. The message `Preprocessing results saved.` will be shown, and two files will be saved in [results](https://gitlab.rlp.net/aibi_practical/aibi-ws-2024-25/-/tree/Embedding/results) folder:
+Run the script `data_preprocessing.py`, that is located in [methods](methods/) folder. The message `Preprocessing results saved.` will be shown, and two files will be saved in [results](results/) folder:
 
 - `labeled_sequences_newdataset.csv` - intermediate result, protein sequences are assigned to bincodes. 
 - `NEW_labeled_sequences.csv` - cleaned final result of preprocessing, falsely added columns are merged; the file will be used further.
 
 ### 3. Embedding
 
-Run the script `embedding.py` that is located in [methods](https://gitlab.rlp.net/aibi_practical/aibi-ws-2024-25/-/tree/Embedding/methods) folder. You might get some warnings about Tensorflow, but they shouldn't influence the output. The script execution could take some time.
+Run the script `embedding.py` that is located in [methods](methods/) folder. You might get some warnings about Tensorflow, but they shouldn't influence the output. The script execution could take some time.
 
-After that the message `Embedding results saved` will be shown in the Terminal, and `kidera_encoded_compressed.npz` file will be created in [results](https://gitlab.rlp.net/aibi_practical/aibi-ws-2024-25/-/tree/Embedding/results) folder. This is an intermediate result, where the 3D Array with protein sequences embedded with 10 Kidera factors and padded to a custom sequence length is saved to be used as an input for training.
+After that the message `Embedding results saved` will be shown in the Terminal, and `kidera_encoded_compressed.npz` file will be created in [results](results/) folder. This is an intermediate result, where the 3D Array with protein sequences embedded with 10 Kidera factors and padded to a custom sequence length is saved to be used as an input for training.
 
 When needed, modify the `max_length` parameter in the code (line 53) to perform padding with different sequence length.
 
@@ -156,9 +163,9 @@ When needed, modify the `max_length` parameter in the code (line 53) to perform 
 
 Before running the script make sure that on the line 114 in `dummy_input = torch.rand(1, 10, z)` the value of z corresponds to the `max_length`, defined during the **Embedding** step.
 
-Run the script `labeling_training.py` that is located in [methods](https://gitlab.rlp.net/aibi_practical/aibi-ws-2024-25/-/tree/Embedding/methods). You might get some warnings about torch, but they shouldn't influence the output. You will also get the message `Training in progress...`. The script execution could take some time depending on the sequence length that was defined during embedding step (e.g. ~15 minutes for the length of 1500 aminoacids if executed on the TH Bingen AI Server) and hardware, where the project is executed.
+Run the script `labeling_training.py` that is located in [methods](methods/). You might get some warnings about torch, but they shouldn't influence the output. You will also get the message `Training in progress...`. The script execution could take some time depending on the sequence length that was defined during embedding step (e.g. ~15 minutes for the length of 1500 aminoacids if executed on the TH Bingen AI Server) and hardware, where the project is executed.
 
-After that the messages `Training output saved.` and `Training and validation loss graphs saved.` will be shown in the Terminal, and following files will be saved in [results](https://gitlab.rlp.net/aibi_practical/aibi-ws-2024-25/-/tree/Embedding/results) folder:
+After that the messages `Training output saved.` and `Training and validation loss graphs saved.` will be shown in the Terminal, and following files will be saved in [results](results/) folder:
 
 - `training_validation_loss.png` - training and validation losses visualized
 - `training_output.txt` - information about each epoch, training time and metrics values
@@ -176,9 +183,9 @@ If needed, modify the following in the script:
 
 Before running the script make sure that on the line 60 in `dummy_input = torch.rand(1, 10, z)` the value of z corresponds to the `max_length`, defined during the **Embedding** step.
 
-If you want to perform training with cross validation, run the script `labeling_training_cross.py` that is located in [methods](https://gitlab.rlp.net/aibi_practical/aibi-ws-2024-25/-/tree/Embedding/methods) **instead of** `labeling_training.py`. You might get some warnings about torch, but they shouldn't influence the output. You will also get the message `Cross validation in progress...`. The script execution could take some time depending on the sequence length that was defined during embedding step (~1 hour for the length of 1500 aminoacids if executed in the TH Bingen AI Server) and hardware, where the project is executed.
+If you want to perform training with cross validation, run the script `labeling_training_cross.py` that is located in [methods](methods/) **instead of** `labeling_training.py`. You might get some warnings about torch, but they shouldn't influence the output. You will also get the message `Cross validation in progress...`. The script execution could take some time depending on the sequence length that was defined during embedding step (~1 hour for the length of 1500 aminoacids if executed in the TH Bingen AI Server) and hardware, where the project is executed.
 
-After that the message `Cross validation output saved.` will be shown in the Terminal, and the file `cross_validation_output.txt` will be saved in [results](https://gitlab.rlp.net/aibi_practical/aibi-ws-2024-25/-/tree/Embedding/results) folder. 
+After that the message `Cross validation output saved.` will be shown in the Terminal, and the file `cross_validation_output.txt` will be saved in [results](results/) folder. 
 
 Rename the file based on the performed experiment. 
 
